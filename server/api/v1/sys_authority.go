@@ -149,7 +149,7 @@ func GetAuthorityList(c *gin.Context) {
 	}
 	err, list, total := service.GetAuthorityInfoList(pageInfo)
 	if err != nil {
-		response.FailWithMessage(fmt.Sprintf("获取数据失败，%v", err), c)
+		response.FailWithMessage(fmt.Sprintf("GetAuthorityList()获取数据失败，%v", err), c)
 	} else {
 		response.OkWithData(resp.PageResult{
 			List:     list,

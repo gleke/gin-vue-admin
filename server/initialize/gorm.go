@@ -19,7 +19,7 @@ func Gorm() {
 	switch global.GVA_CONFIG.System.DbType {
 	case "mysql":
 		GormMysql()
-	case "postgresql":
+	case "postgres":
 		GormPostgreSql()
 	//case "sqlite": // sqlite需要gcc支持 windows用户需要自行安装gcc 如需使用打开注释即可
 	//	GormSqlite()
@@ -47,6 +47,7 @@ func GormDBTables(db *gorm.DB) {
 		model.ExaSimpleUploader{},
 		model.ExaCustomer{},
 		model.SysOperationRecord{},
+		model.HrpTriagedQueue{},
 	)
 	if err != nil {
 		global.GVA_LOG.Error("register table failed", zap.Any("err", err))

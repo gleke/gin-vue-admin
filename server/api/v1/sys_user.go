@@ -192,7 +192,7 @@ func GetUserList(c *gin.Context) {
 	}
 	err, list, total := service.GetUserInfoList(pageInfo)
 	if err != nil {
-		response.FailWithMessage(fmt.Sprintf("获取数据失败，%v", err), c)
+		response.FailWithMessage(fmt.Sprintf(" GetUserList()获取数据失败，%v", err), c)
 	} else {
 		response.OkWithData(resp.PageResult{
 			List:     list,
